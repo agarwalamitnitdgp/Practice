@@ -1,0 +1,29 @@
+public class ImmutableStringMeaning {
+
+    public static String method1(String s) {
+        s = s + "123";
+        return s;
+    }
+
+    public static String method2(String s) {
+        return s;
+    }
+
+    public static StringBuilder method3(StringBuilder s1) {
+        s1 = s1.append("123");
+        return s1;
+    }
+
+    public static StringBuilder method4(StringBuilder s1) {
+        return s1;
+    }
+
+    public static void main(String[] args) {
+        String s = "test";
+        StringBuilder s1 = new StringBuilder("test");
+        System.out.println(method1(s));  // test123
+        System.out.println(method2(s));  //test
+        System.out.println(method3(s1));  // test123
+        System.out.println(method4(s1));  // test123
+    }
+}
